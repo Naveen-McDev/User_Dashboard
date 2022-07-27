@@ -7,7 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     loadUsers();
-  }, []);
+  }, [users]);
 
   const loadUsers = async () => {
     const result = await axios.get(
