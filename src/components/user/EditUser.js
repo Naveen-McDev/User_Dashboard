@@ -20,6 +20,12 @@ const EditUser = () => {
   };
 
   useEffect(() => {
+    const loadUser = async () => {
+        const result = await axios.get(
+          `https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user-dashboard/${id}`
+        );
+        setUser(result.data);
+      };
     loadUser();
   }, []);
 
@@ -32,12 +38,7 @@ const EditUser = () => {
     navigate("/");
   };
 
-  const loadUser = async () => {
-    const result = await axios.get(
-      `https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user-dashboard/${id}`
-    );
-    setUser(result.data);
-  };
+  
 
   return (
     <div className="container mt-4">

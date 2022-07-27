@@ -12,12 +12,13 @@ const User = () => {
   });
   const { id } = useParams();
   useEffect(() => {
+    const loadUser = async () => {
+        const res = await axios.get(`https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user-dashboard/${id}`);
+        setUser(res.data);
+      };
     loadUser();
   }, []);
-  const loadUser = async () => {
-    const res = await axios.get(`https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user-dashboard/${id}`);
-    setUser(res.data);
-  };
+  
   return (
     <div className="container py-4">
       <Link className="btn btn-primary" to="/">
