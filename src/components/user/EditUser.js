@@ -27,7 +27,7 @@ const EditUser = () => {
         setUser(result.data);
       };
     loadUser();
-  }, []);
+  }, [id]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
